@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>license_updater.main.client &mdash; Action Updater 0.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinx-argparse.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Action Updater
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/user-guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/developer-guide.html">Developer Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/modules.html">license_updater</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Action Updater</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>license_updater.main.client</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for license_updater.main.client</h1><div class="highlight"><pre>
+<span></span><span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Vanessa Sochat&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s2">&quot;Copyright 2022-2023, Vanessa Sochat&quot;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s2">&quot;MPL 2.0&quot;</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="kn">from</span> <span class="nn">rich.console</span> <span class="kn">import</span> <span class="n">Console</span>
+<span class="kn">from</span> <span class="nn">rich.markdown</span> <span class="kn">import</span> <span class="n">Markdown</span>
+
+<span class="kn">import</span> <span class="nn">license_updater.defaults</span> <span class="k">as</span> <span class="nn">defaults</span>
+<span class="kn">import</span> <span class="nn">license_updater.utils</span> <span class="k">as</span> <span class="nn">utils</span>
+
+<span class="kn">from</span> <span class="nn">.script</span> <span class="kn">import</span> <span class="n">ScriptFile</span>
+<span class="kn">from</span> <span class="nn">.updater</span> <span class="kn">import</span> <span class="n">UpdaterFinder</span>
+
+
+<div class="viewcode-block" id="LicenseUpdater"><a class="viewcode-back" href="../../../source/license_updater.main.html#license_updater.main.client.LicenseUpdater">[docs]</a><span class="k">class</span> <span class="nc">LicenseUpdater</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a License Updater</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">code_theme</span><span class="o">=</span><span class="s2">&quot;vim&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_updaters</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quiet</span> <span class="o">=</span> <span class="n">quiet</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">code_theme</span> <span class="o">=</span> <span class="n">code_theme</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">Console</span><span class="p">()</span>
+
+        <span class="c1"># Keep a summary of updates</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">summary</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># If using for a GitHub action, a global flag that indicates changes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">has_changes</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">updaters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get a list of updaters available</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_updaters</span><span class="p">:</span>
+
+            <span class="c1"># All updaters can be provided with the GitHub token</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">finder</span> <span class="o">=</span> <span class="n">UpdaterFinder</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_updaters</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">updaterClass</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">finder</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+                <span class="c1"># Instantiate an updater for the path, provide settings</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_updaters</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">updaterClass</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_updaters</span>
+
+<div class="viewcode-block" id="LicenseUpdater.iter_paths"><a class="viewcode-back" href="../../../source/license_updater.main.html#license_updater.main.client.LicenseUpdater.iter_paths">[docs]</a>    <span class="k">def</span> <span class="nf">iter_paths</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">paths</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Helper function to flexibly handle parsing paths.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Ensure we start from a list</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">paths</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">paths</span><span class="p">]</span>
+
+        <span class="n">final</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+        <span class="c1"># Run each updater on each path</span>
+        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">path</span> <span class="o">==</span> <span class="s2">&quot;.&quot;</span><span class="p">:</span>
+                <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+                <span class="n">final</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">utils</span><span class="o">.</span><span class="n">recursive_find</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">defaults</span><span class="o">.</span><span class="n">supported_filetypes</span><span class="p">):</span>
+                <span class="n">final</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">final</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="LicenseUpdater.detect"><a class="viewcode-back" href="../../../source/license_updater.main.html#license_updater.main.client.LicenseUpdater.detect">[docs]</a>    <span class="k">def</span> <span class="nf">detect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">paths</span><span class="p">,</span> <span class="n">details</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">updaters</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_patterns</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Look for changes in files according to updaters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ignore_patterns</span> <span class="o">=</span> <span class="n">ignore_patterns</span> <span class="ow">or</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">ignore_patterns</span><span class="p">:</span>
+            <span class="n">ignore_patterns</span> <span class="o">=</span> <span class="s2">&quot;(</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="s2">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ignore_patterns</span><span class="p">)</span>
+        <span class="n">scripts</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># Reset out summary</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">summary</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">iter_paths</span><span class="p">(</span><span class="n">paths</span><span class="p">):</span>
+
+            <span class="c1"># Ignore patterns that match a user provided pattern!</span>
+            <span class="k">if</span> <span class="n">ignore_patterns</span> <span class="ow">and</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">ignore_patterns</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+                <span class="k">continue</span>
+
+            <span class="c1"># Load into script</span>
+            <span class="n">script</span> <span class="o">=</span> <span class="n">ScriptFile</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+            <span class="n">showed_script</span> <span class="o">=</span> <span class="kc">False</span>
+
+            <span class="c1"># Todo convert this into an iter function (shared between detect and update)</span>
+            <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">updater</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">updaters</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+                <span class="c1"># Skip updaters per request of the user</span>
+                <span class="k">if</span> <span class="n">updaters</span> <span class="ow">and</span> <span class="n">updater</span><span class="o">.</span><span class="n">slug</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">updaters</span><span class="p">:</span>
+                    <span class="k">continue</span>
+
+                <span class="c1"># Don&#39;t print anything if no match</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">updater</span><span class="o">.</span><span class="n">matches</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+                    <span class="k">continue</span>
+
+                <span class="c1"># The count reflects the last run</span>
+                <span class="k">if</span> <span class="n">updater</span><span class="o">.</span><span class="n">detect</span><span class="p">(</span><span class="n">script</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">showed_script</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⭐️ [yellow]</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">[/yellow]&quot;</span><span class="p">)</span>
+                        <span class="n">showed_script</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[red]✖️ </span><span class="si">{</span><span class="n">updater</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2"> Updater: </span><span class="si">{</span><span class="n">updater</span><span class="o">.</span><span class="n">count</span><span class="si">}</span><span class="s2"> updates[/red]&quot;</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">has_changes</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">showed_script</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⭐️ [yellow]</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">[/yellow]&quot;</span><span class="p">)</span>
+                        <span class="n">showed_script</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[green]✔ </span><span class="si">{</span><span class="n">updater</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">: No updates[/green]&quot;</span><span class="p">)</span>
+
+            <span class="c1"># If we want to show summary details:</span>
+            <span class="k">if</span> <span class="n">details</span> <span class="ow">and</span> <span class="n">script</span><span class="o">.</span><span class="n">has_changes</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">collect_summary</span><span class="p">(</span><span class="n">script</span><span class="p">)</span>
+            <span class="n">scripts</span><span class="p">[</span><span class="n">path</span><span class="p">]</span> <span class="o">=</span> <span class="n">script</span>
+
+        <span class="k">if</span> <span class="n">details</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">show_summary</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">scripts</span></div>
+
+<div class="viewcode-block" id="LicenseUpdater.show_summary"><a class="viewcode-back" href="../../../source/license_updater.main.html#license_updater.main.client.LicenseUpdater.show_summary">[docs]</a>    <span class="k">def</span> <span class="nf">show_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Show summary of changes</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">summary</span><span class="p">:</span>
+            <span class="n">md</span> <span class="o">=</span> <span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\n</span><span class="s2"># No changes</span><span class="se">\n</span><span class="s2">&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">code_theme</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">code_theme</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">md</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="c1"># Sort by counts</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">summary</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">])}</span>
+        <span class="n">md</span> <span class="o">=</span> <span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\n</span><span class="s2"># Summary of changes</span><span class="se">\n</span><span class="s2">&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">code_theme</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">code_theme</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">md</span><span class="p">)</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">diff</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">md</span> <span class="o">=</span> <span class="n">Markdown</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\n</span><span class="s2">```diff</span><span class="se">\n</span><span class="si">{</span><span class="n">diff</span><span class="si">}</span><span class="se">\n</span><span class="s2">```</span><span class="se">\n</span><span class="s2">- count: </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">code_theme</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">code_theme</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">md</span><span class="p">)</span>
+            <span class="n">total</span> <span class="o">+=</span> <span class="n">count</span>
+
+        <span class="c1"># Show total count!</span>
+        <span class="n">md</span> <span class="o">=</span> <span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;## Total count: </span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">code_theme</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">code_theme</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">md</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="LicenseUpdater.collect_summary"><a class="viewcode-back" href="../../../source/license_updater.main.html#license_updater.main.client.LicenseUpdater.collect_summary">[docs]</a>    <span class="k">def</span> <span class="nf">collect_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">script</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Collect a summary of the changes</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">summary</span> <span class="o">=</span> <span class="n">script</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">code_theme</span><span class="p">,</span> <span class="n">return_result</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">summary</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="n">summary</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">summary</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">summary</span><span class="p">[</span><span class="n">summary</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">summary</span><span class="p">[</span><span class="n">summary</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span></div>
+
+<div class="viewcode-block" id="LicenseUpdater.update"><a class="viewcode-back" href="../../../source/license_updater.main.html#license_updater.main.client.LicenseUpdater.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">paths</span><span class="p">,</span> <span class="n">details</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">updaters</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_patterns</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update files.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">updates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">detect</span><span class="p">(</span>
+            <span class="n">paths</span><span class="p">,</span> <span class="n">details</span><span class="o">=</span><span class="n">details</span><span class="p">,</span> <span class="n">updaters</span><span class="o">=</span><span class="n">updaters</span><span class="p">,</span> <span class="n">ignore_patterns</span><span class="o">=</span><span class="n">ignore_patterns</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">path</span><span class="p">,</span> <span class="n">script</span> <span class="ow">in</span> <span class="n">updates</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">script</span><span class="o">.</span><span class="n">has_changes</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[purple]❇ Writing updated </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">[/purple]&quot;</span><span class="p">)</span>
+                <span class="n">script</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;[license-updater]&quot;</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Vanessa Sochat.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

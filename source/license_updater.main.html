@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>license_updater.main package &mdash; Action Updater 0.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx-argparse.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="license_updater.main.updaters package" href="license_updater.main.updaters.html" />
+    <link rel="prev" title="license_updater.client package" href="license_updater.client.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Action Updater
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/user-guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/developer-guide.html">Developer Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">license_updater</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="license_updater.html">license_updater package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="license_updater.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="license_updater.client.html">license_updater.client package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">license_updater.main package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="license_updater.utils.html">license_updater.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="license_updater.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="license_updater.html#module-license_updater.defaults">license_updater.defaults module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="license_updater.html#module-license_updater.logger">license_updater.logger module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="license_updater.html#module-license_updater.version">license_updater.version module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="license_updater.html#module-license_updater">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Action Updater</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">license_updater</a> &raquo;</li>
+        
+          <li><a href="license_updater.html">license_updater package</a> &raquo;</li>
+        
+      <li>license_updater.main package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/source/license_updater.main.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="license-updater-main-package">
+<h1>license_updater.main package<a class="headerlink" href="#license-updater-main-package" title="Permalink to this heading">¶</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license_updater.main.updaters.html">license_updater.main.updaters package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="license_updater.main.updaters.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="license_updater.main.updaters.python_copyright_metadata.html">license_updater.main.updaters.python_copyright_metadata package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="license_updater.main.updaters.python_copyright_metadata.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="license_updater.main.updaters.python_copyright_metadata.html#module-license_updater.main.updaters.python_copyright_metadata.update">license_updater.main.updaters.python_copyright_metadata.update module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="license_updater.main.updaters.python_copyright_metadata.html#module-license_updater.main.updaters.python_copyright_metadata">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="license_updater.main.updaters.html#module-license_updater.main.updaters">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-license_updater.main.client">
+<span id="license-updater-main-client-module"></span><h2>license_updater.main.client module<a class="headerlink" href="#module-license_updater.main.client" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="license_updater.main.client.LicenseUpdater">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">license_updater.main.client.</span></span><span class="sig-name descname"><span class="pre">LicenseUpdater</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code_theme</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'vim'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/license_updater/main/client.html#LicenseUpdater"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#license_updater.main.client.LicenseUpdater" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Create a License Updater</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="license_updater.main.client.LicenseUpdater.collect_summary">
+<span class="sig-name descname"><span class="pre">collect_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">script</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/license_updater/main/client.html#LicenseUpdater.collect_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#license_updater.main.client.LicenseUpdater.collect_summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect a summary of the changes</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="license_updater.main.client.LicenseUpdater.detect">
+<span class="sig-name descname"><span class="pre">detect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">paths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updaters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_patterns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/license_updater/main/client.html#LicenseUpdater.detect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#license_updater.main.client.LicenseUpdater.detect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Look for changes in files according to updaters</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="license_updater.main.client.LicenseUpdater.iter_paths">
+<span class="sig-name descname"><span class="pre">iter_paths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">paths</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/license_updater/main/client.html#LicenseUpdater.iter_paths"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#license_updater.main.client.LicenseUpdater.iter_paths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to flexibly handle parsing paths.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="license_updater.main.client.LicenseUpdater.show_summary">
+<span class="sig-name descname"><span class="pre">show_summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/license_updater/main/client.html#LicenseUpdater.show_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#license_updater.main.client.LicenseUpdater.show_summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show summary of changes</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="license_updater.main.client.LicenseUpdater.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">paths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updaters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_patterns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/license_updater/main/client.html#LicenseUpdater.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#license_updater.main.client.LicenseUpdater.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update files.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="license_updater.main.client.LicenseUpdater.updaters">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">updaters</span></span><a class="headerlink" href="#license_updater.main.client.LicenseUpdater.updaters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of updaters available</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-license_updater.main.script">
+<span id="license-updater-main-script-module"></span><h2>license_updater.main.script module<a class="headerlink" href="#module-license_updater.main.script" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="license_updater.main.script.ScriptFile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">license_updater.main.script.</span></span><span class="sig-name descname"><span class="pre">ScriptFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/license_updater/main/script.html#ScriptFile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#license_updater.main.script.ScriptFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Parse a script and/or file into the updater.</p>
+<p>We always present the changes (copy of original) and then can
+easily compare the two. The overall structure should not change.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="license_updater.main.script.ScriptFile.diff">
+<span class="sig-name descname"><span class="pre">diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code_theme</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'vim'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_result</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/license_updater/main/script.html#ScriptFile.diff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#license_updater.main.script.ScriptFile.diff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show diff between original (cfg) and changed!</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="license_updater.main.script.ScriptFile.has_changes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">has_changes</span></span><a class="headerlink" href="#license_updater.main.script.ScriptFile.has_changes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine if before != after (the action has changed)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="license_updater.main.script.ScriptFile.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/license_updater/main/script.html#ScriptFile.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#license_updater.main.script.ScriptFile.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the action to file.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-license_updater.main.updater">
+<span id="license-updater-main-updater-module"></span><h2>license_updater.main.updater module<a class="headerlink" href="#module-license_updater.main.updater" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="license_updater.main.updater.UpdaterBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">license_updater.main.updater.</span></span><span class="sig-name descname"><span class="pre">UpdaterBase</span></span><a class="reference internal" href="../_modules/license_updater/main/updater.html#UpdaterBase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#license_updater.main.updater.UpdaterBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="license_updater.main.updater.UpdaterBase.classpath">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">classpath</span></span><a class="headerlink" href="#license_updater.main.updater.UpdaterBase.classpath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="license_updater.main.updater.UpdaterBase.date_time_format">
+<span class="sig-name descname"><span class="pre">date_time_format</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'%Y-%m-%dT%H:%M:%S%z'</span></em><a class="headerlink" href="#license_updater.main.updater.UpdaterBase.date_time_format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="license_updater.main.updater.UpdaterBase.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'An</span> <span class="pre">abstract</span> <span class="pre">base</span> <span class="pre">updater.'</span></em><a class="headerlink" href="#license_updater.main.updater.UpdaterBase.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="license_updater.main.updater.UpdaterBase.detect">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">detect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/license_updater/main/updater.html#UpdaterBase.detect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#license_updater.main.updater.UpdaterBase.detect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="license_updater.main.updater.UpdaterBase.file_regex">
+<span class="sig-name descname"><span class="pre">file_regex</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#license_updater.main.updater.UpdaterBase.file_regex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="license_updater.main.updater.UpdaterBase.matches">
+<span class="sig-name descname"><span class="pre">matches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/license_updater/main/updater.html#UpdaterBase.matches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#license_updater.main.updater.UpdaterBase.matches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine if an updater matches a file.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="license_updater.main.updater.UpdaterBase.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'updater'</span></em><a class="headerlink" href="#license_updater.main.updater.UpdaterBase.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="license_updater.main.updater.UpdaterBase.settings">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">settings</span></span><a class="headerlink" href="#license_updater.main.updater.UpdaterBase.settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get settings specific to updater</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="license_updater.main.updater.UpdaterBase.slug">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">slug</span></span><a class="headerlink" href="#license_updater.main.updater.UpdaterBase.slug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="license_updater.main.updater.UpdaterBase.title">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">title</span></span><a class="headerlink" href="#license_updater.main.updater.UpdaterBase.title" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="license_updater.main.updater.UpdaterFinder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">license_updater.main.updater.</span></span><span class="sig-name descname"><span class="pre">UpdaterFinder</span></span><a class="reference internal" href="../_modules/license_updater/main/updater.html#UpdaterFinder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#license_updater.main.updater.UpdaterFinder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></p>
+<p>Create a cache of available updaters.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="license_updater.main.updater.UpdaterFinder.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/license_updater/main/updater.html#UpdaterFinder.load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#license_updater.main.updater.UpdaterFinder.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load new updaters</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-license_updater.main">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-license_updater.main" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="license_updater.main.updaters.html" class="btn btn-neutral float-right" title="license_updater.main.updaters package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="license_updater.client.html" class="btn btn-neutral float-left" title="license_updater.client package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Vanessa Sochat.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

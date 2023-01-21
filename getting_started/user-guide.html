@@ -1,0 +1,426 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>User Guide &mdash; Action Updater 0.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx-argparse.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Developer Guide" href="developer-guide.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Action Updater
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commands">⭐️ Commands ⭐️</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#list">List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#detect">Detect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update">Update</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#updaters">Updaters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#python-copyright-metadata">Python Copyright Metadata</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#container">Container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#github-action">GitHub Action</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developer-guide.html">Developer Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/modules.html">license_updater</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Action Updater</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Getting Started</a> &raquo;</li>
+        
+      <li>User Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/getting_started/user-guide.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="user-guide">
+<span id="getting-started-user-guide"></span><h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this heading">¶</a></h1>
+<p>The License Updater will make it easy to update license years in different kinds of files.
+I created this tool after having to manually update files across several repos, always in the new year,
+and realizing I could make something specific to my need to automate it. This also means the tool
+is specific for my (the developer) needs, and you should open an issue on the <a class="reference external" href="https://github.com/vsoch/license-updater">GitHub issue tracker</a>
+if you have a use case that is different. I hope overall it is also useful to you as it is to me!
+If you haven’t read <a class="reference internal" href="installation.html#getting-started-installation"><span class="std std-ref">Installation</span></a> you should do that first.</p>
+<section id="quick-start">
+<span id="getting-started-quick-start"></span><h2>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this heading">¶</a></h2>
+<p>There are two primary functions - to <code class="docutils literal notranslate"><span class="pre">detect</span></code> and <code class="docutils literal notranslate"><span class="pre">update</span></code>!
+The first previews changes to file (or directory) and the
+second writes the changes to file.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>license-updater<span class="w"> </span>detect<span class="w"> </span>mypackage
+<span class="gp">$ </span>license-updater<span class="w"> </span>update<span class="w"> </span>mypackage
+</pre></div>
+</div>
+<p>And that’s it! The action comes with several <span class="xref std std-ref">getting-started_updaters`</span> that will look
+for particular aspects to lint or update. If you have a request for a new updater, please
+<a class="reference external" href="https://github.com/vsoch/license-updater/issues">open an issue</a>,  More detailed usage
+and examples are detailed below.</p>
+</section>
+<section id="commands">
+<span id="getting-started-usage"></span><h2>⭐️ Commands ⭐️<a class="headerlink" href="#commands" title="Permalink to this heading">¶</a></h2>
+<p>For all commands below, the license updater can accept a directory with files,
+or a single file. To start, we expect a directory with files or a direct path
+to a file.</p>
+<section id="list">
+<span id="getting-started-usage-list"></span><h3>List<a class="headerlink" href="#list" title="Permalink to this heading">¶</a></h3>
+<p>View updaters available (and descriptions)</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>license-updater<span class="w"> </span>list-updaters
+<span class="go">┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="go">┃ Title                    ┃ Identifier                ┃ Description                          ┃</span>
+<span class="go">┡━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="go">│ Python-copyright-updater │ python_copyright_metadata │ update __copyright__ in python files │</span>
+<span class="go">└──────────────────────────┴───────────────────────────┴──────────────────────────────────────┘</span>
+</pre></div>
+</div>
+<p>The “Identifier” is what you can use to select an updater with <code class="docutils literal notranslate"><span class="pre">-u</span></code>.</p>
+</section>
+<section id="detect">
+<span id="getting-started-usage-detect"></span><h3>Detect<a class="headerlink" href="#detect" title="Permalink to this heading">¶</a></h3>
+<p>The detect command can be run on any action file (or folder) to determine
+if there are updates to be made.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>license-updater<span class="w"> </span>detect<span class="w"> </span>mypackage
+</pre></div>
+</div>
+<p>Note that you can add one or more “ignore patterns” to skip files or directories:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>license-updater<span class="w"> </span>detect<span class="w"> </span>mypackage<span class="w"> </span>-i<span class="w"> </span>tests
+</pre></div>
+</div>
+<p>If a file has updates, it will print to the terminal a summary of updates for preview.</p>
+<img alt="../_images/detect.png" src="../_images/detect.png" />
+<p>And after you run <code class="docutils literal notranslate"><span class="pre">update</span></code> (described below) you will see all green!</p>
+<img alt="../_images/clean.png" src="../_images/clean.png" />
+<p>You can also select to use one or more specific updaters (add multiple <code class="docutils literal notranslate"><span class="pre">-u`</span></code> or <code class="docutils literal notranslate"><span class="pre">`--updater`</span></code>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>license-updater<span class="w"> </span>detect<span class="w"> </span>-u<span class="w"> </span>setoutput<span class="w"> </span>.github/workfows/main.yaml
+</pre></div>
+</div>
+</section>
+<section id="update">
+<span id="getting-started-usage-update"></span><h3>Update<a class="headerlink" href="#update" title="Permalink to this heading">¶</a></h3>
+<p>An update command performs a detect, but then writes changes to the file.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>license-updater<span class="w"> </span>update<span class="w"> </span>mypackage
+</pre></div>
+</div>
+<p>For either of the <code class="docutils literal notranslate"><span class="pre">update</span></code> or <code class="docutils literal notranslate"><span class="pre">detect</span></code> commands, turn off details by
+adding the <code class="docutils literal notranslate"><span class="pre">--no-details</span></code> flag.</p>
+<p>Please <a class="reference external" href="https://github.com/vsoch/license-updater">open an issue</a> if you’d like
+to see other functionality or updaters!</p>
+</section>
+</section>
+<section id="updaters">
+<span id="getting-started-updaters"></span><h2>Updaters<a class="headerlink" href="#updaters" title="Permalink to this heading">¶</a></h2>
+<p>Each updater:</p>
+<ul class="simple">
+<li><p>Is provided as a directory under <a class="reference external" href="https://github.com/vsoch/license-updater/tree/main/license_updater/main/updaters">license_updater/main/updaters</a></p></li>
+<li><p>Accepts a file name regular expression to know when to check a file</p></li>
+</ul>
+<p>And has those defaults and other metadata briefly documented here!</p>
+<section id="python-copyright-metadata">
+<h3>Python Copyright Metadata<a class="headerlink" href="#python-copyright-metadata" title="Permalink to this heading">¶</a></h3>
+<p>The python copyright updater looks for <code class="docutils literal notranslate"><span class="pre">__copyright__</span></code> in files. Specifically,
+we look for this pattern in the header, and:</p>
+<ul class="simple">
+<li><p>check to see if it is up to date, meaning there is a date like <code class="docutils literal notranslate"><span class="pre">&lt;start&gt;-&lt;end&gt;</span></code> and end is the current year.</p></li>
+<li><p>if not up to date, check if it has a range (as above) and update the end year.</p></li>
+<li><p>if it’s a single year, add the current year in the same format.</p></li>
+</ul>
+<p>If you want other functionality, please <a class="reference external" href="https://github.com/vsoch/license-updater">open an issue</a>,
+For version sorting and updates, we use <a class="reference external" href="https://vsoch.github.io/pipelib">pipelib</a>.</p>
+</section>
+</section>
+<section id="container">
+<h2>Container<a class="headerlink" href="#container" title="Permalink to this heading">¶</a></h2>
+<p>If you don’t want to install locally, we provide a <a class="reference external" href="https://github.com/vsoch/license-updater/pkgs/container/license-updater">docker container</a>
+that you can use! As an example</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>ghcr.io/vsoch/license-updater
+<span class="gp"># </span>which<span class="w"> </span>license-updater
+</pre></div>
+</div>
+<p>And pulling via Singularity (so you don’t change permissions, or can use on an HPC cluster)</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>singularity<span class="w"> </span>pull<span class="w"> </span>docker://ghcr.io/vsoch/license-updater
+<span class="gp">$ </span>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>license-updater_latest.sif<span class="w"> </span>license-updater<span class="w"> </span>detect<span class="w"> </span>mypackage
+</pre></div>
+</div>
+<p>And that’s it!</p>
+</section>
+<section id="github-action">
+<h2>GitHub Action<a class="headerlink" href="#github-action" title="Permalink to this heading">¶</a></h2>
+<p>I decided that I wanted to be able to run a detection to alert me to needing changes
+at least once a year (maybe twice?) and then use the main branch here so I could always
+be “subscribed” to new updates. Since cron doesn’t have a “run once a year” setting, we need to hack
+this a bit! We can ask it to run once a month (on our day of choice) and then only proceed given
+that we hit a particular month (or set of months). Note that since a GitHub bot (action) is not
+allowed to write to any workflow file, we can’t open a pull request with changes - we can only
+run and alert you to run the command locally!</p>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h3>
+<p>Here is an example of running the GitHub Updater to run a detection once a year.
+This is supported by cron!</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitHub Updater (Yearly)</span>
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">schedule</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># 1st of June, so it&#39;s summer and you aren&#39;t busy, right?</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">6</span><span class="nv"> </span><span class="s">*&quot;</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">run-detect</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run License Updater</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout Repository</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detect and Update</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vsoch/license-updater@main</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span>
+<span class="w">          </span><span class="c1"># This is the default</span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mypackage</span>
+</pre></div>
+</div>
+<p>And here is an idea for a hack to make it run more than once a year (but not once a month) -
+basically just get the month and check if we match!</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitHub Updater (Bi-annual)</span>
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">schedule</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># 1st of every month (and action will check for specific months)</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*&quot;</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">test-detect</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run License Updater</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Determine if Running</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">           </span><span class="no">month=$(date &#39;+%m&#39;)</span>
+<span class="w">           </span><span class="no"># Run in October or April</span>
+<span class="w">           </span><span class="no">if [[ &quot;${month}&quot; == &quot;10&quot; ]] || [[ &quot;${month}&quot; == &quot;4&quot; ]]; then</span>
+<span class="w">               </span><span class="no">printf &quot;We are in October or April, run.\n&quot;</span>
+<span class="w">               </span><span class="no">echo &quot;do_run=true&quot; &gt;&gt; $GITHUB_ENV</span>
+<span class="w">           </span><span class="no">else</span>
+<span class="w">               </span><span class="no">printf &quot;We are NOT in October or April, no run.\n&quot;</span>
+<span class="w">               </span><span class="no">echo &quot;do_run=false&quot; &gt;&gt; $GITHUB_ENV</span>
+<span class="w">           </span><span class="no">fi</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout Repository</span>
+<span class="w">        </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$(env.do_run == &#39;true&#39;)</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detect and Update</span>
+<span class="w">        </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$(env.do_run == &#39;true&#39;)</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vsoch/license-updater@main</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span>
+</pre></div>
+</div>
+<p>Both of these examples are provided in the <a class="reference external" href="https://github.com/vsoch/license-updater/tree/main/examples">examples</a> directory of the repository.</p>
+</section>
+<section id="variables">
+<h3>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">¶</a></h3>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="developer-guide.html" class="btn btn-neutral float-right" title="Developer Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Vanessa Sochat.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
