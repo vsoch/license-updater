@@ -4,7 +4,7 @@
 [![main](https://github.com/vsoch/license-updater/actions/workflows/main.yml/badge.svg)](https://github.com/vsoch/license-updater/actions/workflows/main.yml)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Every year I go through projects and update license strings. It's OK for a few projects but can get really
@@ -105,7 +105,6 @@ tool to generate a contributors graphic below.
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://vsoch.github.io"><img src="https://avatars.githubusercontent.com/u/814322?v=4?s=100" width="100px;" alt="Vanessasaurus"/><br /><sub><b>Vanessasaurus</b></sub></a><br /><a href="https://github.com/vsoch/license-updater/commits?author=vsoch" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://www.henrymike.com/"><img src="https://avatars.githubusercontent.com/u/11765982?v=4?s=100" width="100px;" alt="Mike Henry"/><br /><sub><b>Mike Henry</b></sub></a><br /><a href="https://github.com/vsoch/license-updater/commits?author=mikemhenry" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
