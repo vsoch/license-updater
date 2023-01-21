@@ -1,0 +1,22 @@
+name: Test Actions
+on:
+  pull_request: []
+
+jobs:
+  test-detect:
+    name: Test Detect
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Allow failure
+        uses: ./
+        with:
+          path: license_updater/tests/data/python-copyright-updater-before.py
+          allow_fail: true
+      - name: Test Scoped List
+        uses: ./
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: license_updater/tests/data/python-copyright-updater-before.py
+          allow_fail: true

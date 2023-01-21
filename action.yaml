@@ -1,0 +1,72 @@
+name: "license-updater"
+description: "Check for updates to your license files."
+branding:
+  icon: 'activity'
+  color: 'green'
+inputs:
+  updaters:
+    description: Choose named updaters to run (comma separated value, no spaces)
+    required: false
+  path:
+    description: path to file or directory to check
+    required: true
+  args:
+    description: additional args to provide to 'detect' or 'update' commands
+    required: false
+  version:
+    description: release of updater to use
+    required: false
+  allow_fail:
+    description: allow a failure (only relevant if pull_request is false)
+    default: false
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install Action Updater
+      env:
+        version: ${{ inputs.version }}
+      run: |
+        if [[ "${version}" == "" ]]; then
+            pip install git+https://github.com/vsoch/license-updater.git@main
+        else
+            pip install license-updater@${version}
+        fi
+      shell: bash
+
+    - name: Detect Action Updates
+      env:
+        path: ${{ inputs.path }}
+        args: ${{ inputs.args }}
+        updaters: ${{ inputs.updaters }}
+      run: |
+        # If pwd is provided, ensure we get the entire path
+        if [[ "${path}" == "." ]]; then
+            path=$(pwd)
+            echo "path=${path}" >> ${GITHUB_ENV}
+        fi
+        cmd="license-updater"
+        cmd="${cmd} detect"
+        if [[ "${updaters}" != "" ]]; then
+            cmd="${cmd} --updaters ${updaters}"
+        fi
+        cmd="${cmd} ${path} ${args}"
+        printf "${cmd}\n"
+        $cmd && retval=0 || retval=1
+        echo "retval=${retval}" >> $GITHUB_ENV
+      shell: bash
+
+    - name: Exit on failure (updates)
+      env:
+        allow_fail: ${{ inputs.allow_fail }}
+        retval: ${{ env.retval }}
+      run: |
+        if [[ "${retval}" != "0" ]] && [[ "${allow_fail}" == "false" ]]; then
+            printf "Detect found changes, and allow_fail is false."
+            exit 1
+        elif [[ "${retval}" != "0" ]] && [[ "${allow_fail}" == "true" ]]; then
+            printf "Detect found changes, and allow_fail is true."
+            exit 0
+        fi
+        printf "Return value is ${retval}, no changes needed!\n"
+      shell: bash
